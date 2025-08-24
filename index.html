@@ -122,26 +122,26 @@
     <p>© 2025 Ferry. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Modal de Captura de Email (GATE) -->
-<div id="emailModal" style="position: fixed; inset: 0; width: 100%; height: 100%;
+  <!-- Modal de Captura de Email -->
+<div id="emailModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-  <div style="background: #fff; padding: 30px; border-radius: 15px; text-align: center; width: 320px; max-width: 90vw;">
-    <h2 style="margin:0 0 10px;">Bem-vindo!</h2>
-    <p style="margin:0 0 15px;">Digite seu e-mail para acessar o site:</p>
-
-    <form id="emailForm" novalidate>
-      <input id="gateEmail" type="email" name="email" required placeholder="Seu e-mail"
-        style="padding: 10px; width: 100%; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px;">
-      <input type="hidden" name="_subject" value="Novo e-mail cadastrado no site DJ Ferry">
+  <div style="background: white; padding: 30px; border-radius: 15px; text-align: center; width: 300px; color: #000;">
+    <h2 style="margin:0 0 10px; color:#000;">Bem-vindo!</h2>
+    <p style="margin:0 0 15px; color:#000; font-size: 16px; font-weight: 500;">
+      Digite seu e-mail para acessar o site:
+    </p>
+    <form id="emailForm" action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST">
+      <input type="email" name="email" required placeholder="Seu e-mail"
+        style="padding: 10px; width: 100%; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px; color:#000;">
       <input type="hidden" name="_captcha" value="false">
-      <button type="submit" style="padding: 10px; width: 100%; background: #3897f0; color: #fff; border: none; border-radius: 6px; cursor: pointer;">
+      <input type="hidden" name="_subject" value="Novo e-mail cadastrado no site DJ Ferry">
+      <button type="submit" style="padding: 10px; width: 100%; background: #3897f0; color: white; border: none; border-radius: 6px; cursor: pointer;">
         Enviar
       </button>
-      <p id="emailError" style="display:none; margin-top:10px; color:#d00; font-size: .9rem;"></p>
-      <p id="emailOk" style="display:none; margin-top:10px; color:#080; font-size: .9rem;">Enviado! Liberando o site…</p>
     </form>
   </div>
 </div>
+
 
 <script>
 (function () {

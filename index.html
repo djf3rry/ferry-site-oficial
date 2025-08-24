@@ -4,29 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJ FERRY | Rio de Janeiro</title>
-  <meta name="description" content="Site oficial de DJ Ferry, DJ e produtor cultural do Rio de Janeiro. Saiba mais sobre sua trajetória, playlists, vídeos e eventos." />
-  <meta name="keywords" content="DJ Ferry, DJ Frozen, Rio de Janeiro, House Tribal, música, eventos, produtor cultural, Spotify, Instagram" />
-  <meta property="og:title" content="DJ FERRY | Rio de Janeiro" />
-  <meta property="og:description" content="Conheça DJ Ferry, sua música, eventos e playlists oficiais." />
-  <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp6TBRurAeBj_ZUiLoY9fKrI75T5epLh-qs1MRNzzHIrFtIA9XXJfzPjLpCWurwVMJOpLFvINbKeFDTs_TaR8Rf7JWdBu9KoINqXN9BstwhfExzaU-t2rUDkBNAbcvRa_wyvgW7zH1ToYVguaCLHvaCnyKOmwRUzKlg9j1lzo240RCUheWoD7SAz3DqRSW/s320/Ativo%2018.png" />
+  <meta name="description" content="Site oficial de DJ Ferry, produtor cultural e DJ do Rio de Janeiro, especializado em House Tribal, Funk, Pop e Eletro. Conheça sua trajetória, playlists, vídeos e eventos." />
+  <meta name="keywords" content="DJ Ferry, DJ Frozen, House Tribal, Rio de Janeiro, produtor cultural, Funk, Pop, Eletro, eventos, música" />
   <link rel="stylesheet" href="style.css" />
   <script src="config.js"></script>
   <script src="script.js" defer></script>
 
   <style>
-    /* Paleta de cores do site */
+    /* Dark theme */
     :root {
-      --primary-color: #3897f0; /* azul principal */
-      --secondary-color: #fff;  /* branco */
-      --text-color: #000;       /* preto para textos */
-      --hover-color: #2a6dc3;
+      --primary-color: #000000;
+      --secondary-color: #333333;
+      --text-color: #ffffff;
+      --accent-color: #777777;
+      --hover-color: #1a1a1a;
+      --button-color: #555555;
+      --button-hover: #777777;
     }
 
     body {
       font-family: Arial, sans-serif;
       color: var(--text-color);
       margin: 0;
-      background: var(--secondary-color);
+      background: var(--primary-color);
     }
 
     header {
@@ -34,32 +34,45 @@
       flex-direction: column;
       align-items: center;
       padding: 15px;
-      background-color: var(--primary-color);
-      color: var(--secondary-color);
+      background-color: var(--secondary-color);
+      color: var(--text-color);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
+    header .logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
     header nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: var(--secondary-color);
+      color: var(--text-color);
       font-weight: bold;
     }
 
     header nav a:hover {
-      color: var(--hover-color);
+      color: var(--accent-color);
     }
 
     section {
       padding: 40px 20px;
+      background-color: var(--secondary-color);
+      margin-bottom: 10px;
+      border-radius: 10px;
     }
 
     h2 {
-      color: var(--primary-color);
+      color: var(--text-color);
       text-align: center;
       margin-bottom: 20px;
+    }
+
+    p {
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
     .gallery img {
@@ -70,108 +83,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--primary-color);
-      color: var(--secondary-color);
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255,255,255,0.2);
     }
-
-    /* Botão flutuante do WhatsApp */
-    #whatsappBtn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25D366;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-      z-index: 9999;
-      transition: transform 0.2s;
-    }
-
-    #whatsappBtn:hover {
-      transform: scale(1.1);
-    }
-  </style>
-</head>
-<body>
-
-  <!-- HEADER -->
-  <header>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp6TBRurAeBj_ZUiLoY9fKrI75T5epLh-qs1MRNzzHIrFtIA9XXJfzPjLpCWurwVMJOpLFvINbKeFDTs_TaR8Rf7JWdBu9KoINqXN9BstwhfExzaU-t2rUDkBNAbcvRa_wyvgW7zH1ToYVguaCLHvaCnyKOmwRUzKlg9j1lzo240RCUheWoD7SAz3DqRSW/s320/Ativo%2018.png" alt="Logo Ferry" class="logo" />
-    <h1 id="name"></h1>
-    <nav>
-      <a href="#bio">Bio</a>
-      <a href="#spotify">Spotify</a>
-      <a href="#youtube">Vídeos</a>
-      <a href="#instagram">Instagram</a>
-      <a href="#presskit">Press Kit</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section id="hero">
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYAuCeU2gqezFo28vQn2F1DnBnkbmdefOPjmfGVqpeYF7EDXouIDzKJ0XPpwKmsVphwG-BlM_NFO2L57GOu6_iThjXihyphenhyphenyYCUedkzOooEsmIIpwuscOKyjce9Yuy37gmbuh0syIpIIlKoCV5N48Mc5MB5IoGmu-ZDObEXGtUkZOPYEzzgvt_oqzGRHRZe0/s4219/Design%20sem%20nome.png.png" alt="DJ Ferry" />
-  </section>
-
-  <!-- BIO -->
-  <section id="bio">
-    <h2>Bio</h2>
-    <p>
-      Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ. Sob o nome artístico DJ Frozen, mergulhou no universo do Funk, Pop e Eletro, adquirindo experiência ao lado de grandes nomes da cena como Duda Santos.
-    </p>
-    <p>
-      Aos 18 anos, expandiu seu caminho para as produções culturais em Niterói, onde consolidou sua atuação e nunca mais parou. Hoje, Ferry é reconhecido não apenas como um DJ versátil, mas também como um produtor cultural comprometido, transitando com a mesma dedicação entre as pick-ups e a produção de eventos.
-    </p>
-    <p>
-      Sua trajetória inclui apresentações em espaços marcantes como Canta Electro na Concha Acústica de Niterói, Closet Pub em Cabo Frio, The Club em Rio das Ostras, Raiz da Lapa no Rio de Janeiro e Festa Stalker (Street Lapa).
-    </p>
-    <p>
-      Atualmente, Walace dedica-se ao House Tribal, estilo que traduz sua energia e identidade musical. Com batidas intensas e envolventes, transforma cada apresentação em uma experiência única, provando que a música é uma ponte de conexão e liberdade.
-    </p>
-  </section>
-
-  <!-- SPOTIFY -->
-  <section id="spotify" style="text-align: center;">
-    <h2>Spotify Playlist</h2>
-    <iframe
-      src="https://open.spotify.com/embed/playlist/0cis60UFxY1lZKxXeErCfn?utm_source=generator"
-      width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"
-      style="max-width: 660px; border-radius: 12px;">
-    </iframe>
-  </section>
-
-  <!-- YOUTUBE -->
-  <section id="youtube">
-    <h2>Vídeo</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/lKMPOJ2RNfw" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen></iframe>
-  </section>
-
-  <!-- INSTAGRAM -->
-  <div style="display: flex; justify-content: center; padding: 20px;">
-    <blockquote class="instagram-media"
-      data-instgrm-permalink="https://www.instagram.com/reel/DNjmAj7Put7/?utm_source=ig_embed&amp;utm_campaign=loading"
-      data-instgrm-version="14" style="max-width:540px; width:100%; margin:0 auto;">
-    </blockquote>
-  </div>
-  <script async src="//www.instagram.com/embed.js"></script>
-
-  <!-- PRESS KIT -->
-  <section id="presskit">
-    <h2>Press Kit</h2>
-    <a href="https://drive.google.com/drive/folders/1L8TJv78hIDmtFaZjBGcOjajIKchWJkN3" target="_blank">Baixar Press Kit</a>
-  </section>
-
-  <!-- GALERIA -->
-  <section id="galeria">
-    <div class="gallery">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjySfLdOfy9_gYTbtbZPk8DrUpjEvhdMMsngqQzp3ME59PrmYL64u0N7IJEo_Qv-PRm_RnWwwha0OZzazaY1nByJbgriwhCnr1IjpSGNrGYeuQyYLXELmTarSGkY5hJojRFdLczaUzsvsoQ0siXJUcJHItdTJrM9r1pTxf1MEYV70yXy0cPWWLzv1Hb9k28/s1280/4983783602949041985.jpg" alt="Foto 1" />
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN7tmI95kUV5Kg24BT8LI-cv_2EiaOM3UT9zLZdB1TPOIdjPPMNFAPQilqjqXlQc1bF3V8vGIgUct08BBqxDON37BXBTODgQOegkmgQsPkXKbeoWrfxg2-Wu2zOsIVz9CcBwyr1rRnpDjT98hZppAjllYqKC3WW5Krp_9G14XeWCYsSWY5nX-YsvIuvxAb/s1280/4983783602949041986.jpg" alt="Foto 2" />
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO4TsGfmSWm_a-KZVrLebeeTx1Bk0NiwdQv41hWJjG1ewV5JZgPYZzhGAIPi39Bj7yvEPeiKSTpH9n9x46VP0-z0WAyUIhJ6W1DdNiDWWo8WZd1QD7G8

@@ -41,9 +41,16 @@
       z-index: 1000;
     }
 
+    /* Ajustes do logo e do nome */
     header .logo {
-      width: 120px;
+      width: 144px; /* aumentado 20% em relação ao original de 120px */
       margin-bottom: 10px;
+    }
+
+    header h1#name {
+      font-size: 60%; /* reduzido 40% */
+      margin: 0 0 10px 0;
+      color: var(--text-color);
     }
 
     header nav a {
@@ -251,10 +258,8 @@
     <p>© 2025 Ferry. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Botão flutuante WhatsApp -->
   <a href="https://wa.me/5521964732403" target="_blank" id="whatsappBtn">💬 WhatsApp</a>
 
-  <!-- Modal de Captura de Email -->
   <div id="emailModal" style="position: fixed; inset: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 9999;">
     <div style="background: var(--secondary-color); padding: 30px; border-radius: 15px; text-align: center; width: 320px; max-width: 90vw; color: var(--text-color);">
       <h2 style="margin:0 0 10px; color:var(--text-color);">Bem-vindo!</h2>

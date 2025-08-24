@@ -4,121 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DJ FERRY | Rio de Janeiro</title>
-  <meta name="description" content="Site oficial de DJ Ferry, produtor cultural e DJ do Rio de Janeiro, especializado em House Tribal, Funk, Pop e Eletro. Conheça sua trajetória, playlists, vídeos e eventos." />
-  <meta name="keywords" content="DJ Ferry, DJ Frozen, House Tribal, Rio de Janeiro, produtor cultural, Funk, Pop, Eletro, eventos, música" />
+  <meta name="description" content="DJ Ferry, artista e produtor cultural do Rio de Janeiro. House Tribal, Funk, Pop e Eletro. Contato e eventos.">
+  <meta name="keywords" content="DJ Ferry, DJ Rio de Janeiro, House Tribal, Funk, Pop, Eletro, Eventos musicais">
   <link rel="stylesheet" href="style.css" />
   <script src="config.js"></script>
   <script src="script.js" defer></script>
-
   <style>
-    /* Dark theme */
-    :root {
-      --primary-color: #000000;
-      --secondary-color: #333333;
-      --text-color: #ffffff;
-      --accent-color: #777777;
-      --hover-color: #1a1a1a;
-      --button-color: #555555;
-      --button-hover: #777777;
-    }
-
+    /* Paleta escura */
     body {
+      background-color: #000; 
+      color: #ccc; 
       font-family: Arial, sans-serif;
-      color: var(--text-color);
       margin: 0;
-      background: var(--primary-color);
+      padding: 0;
     }
-
     header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px;
-      background-color: var(--secondary-color);
-      color: var(--text-color);
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 1000;
+      width: 100%;
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      z-index: 999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
     }
-
-    /* Ajustes do logo e do nome */
     header .logo {
-      width: 144px; /* aumentado 20% em relação ao original de 120px */
-      margin-bottom: 10px;
+      width: 120px; /* aumentado 20% */
+      height: auto;
+      object-fit: contain;
     }
-
-    header h1#name {
-      font-size: 60%; /* reduzido 40% */
-      margin: 0 0 10px 0;
-      color: var(--text-color);
+    header h1 {
+      font-size: 1.2rem; /* reduzido 40% */
+      margin-left: 15px;
+      color: #fff;
     }
-
-    header nav a {
-      margin: 0 10px;
+    nav a {
+      color: #ccc;
       text-decoration: none;
-      color: var(--text-color);
-      font-weight: bold;
+      margin-left: 20px;
+      transition: color 0.3s;
     }
-
-    header nav a:hover {
-      color: var(--accent-color);
+    nav a:hover {
+      color: #fff;
     }
-
     section {
-      padding: 40px 20px;
-      background-color: var(--secondary-color);
-      margin-bottom: 10px;
-      border-radius: 10px;
+      padding: 100px 20px 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-
-    h2 {
-      color: var(--text-color);
-      text-align: center;
-      margin-bottom: 20px;
+    #hero img {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 0 auto;
     }
-
-    p {
-      color: var(--text-color);
-      line-height: 1.6;
+    #spotify iframe, #youtube iframe {
+      border-radius: 12px;
     }
-
     .gallery img {
       width: 100%;
-      max-width: 300px;
+      max-width: 350px;
       margin: 10px;
       border-radius: 12px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+    #contato a {
+      background-color: #333;
+      color: #fff;
     }
-
     footer {
       text-align: center;
       padding: 20px;
-      background: var(--secondary-color);
-      color: var(--text-color);
+      background-color: #111;
+      color: #888;
     }
-
-    a.button, button {
-      background-color: var(--button-color);
-      color: var(--text-color);
-      padding: 12px 25px;
-      margin: 10px 0;
-      border-radius: 8px;
-      text-decoration: none;
-      border: none;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    a.button:hover, button:hover {
-      background-color: var(--button-hover);
-    }
-
     /* Botão flutuante do WhatsApp */
     #whatsappBtn {
       position: fixed;
@@ -133,38 +94,60 @@
       box-shadow: 0 5px 10px rgba(0,0,0,0.5);
       z-index: 9999;
       transition: transform 0.2s;
+      display: flex;
+      align-items: center;
     }
-
     #whatsappBtn:hover {
       transform: scale(1.1);
     }
-
-    /* Modal de captura de email */
+    #whatsappBtn svg {
+      vertical-align: middle;
+      margin-right: 8px;
+      fill: white;
+    }
+    /* Modal e-mail */
+    #emailModal {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
     #emailModal div {
-      background: var(--secondary-color);
-      color: var(--text-color);
+      background: #222;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      width: 320px;
+      max-width: 90vw;
+      color: #fff;
     }
-
     #emailModal input, #emailModal button {
-      background: var(--primary-color);
-      color: var(--text-color);
-      border: 1px solid var(--accent-color);
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: none;
     }
-
-    #emailModal input::placeholder {
-      color: var(--accent-color);
+    #emailModal input {
+      color: #000;
     }
-
-    #emailModal button:hover {
-      background: var(--button-hover);
+    #emailModal button {
+      background-color: #25D366;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
     }
   </style>
 </head>
-
 <body>
   <header>
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp6TBRurAeBj_ZUiLoY9fKrI75T5epLh-qs1MRNzzHIrFtIA9XXJfzPjLpCWurwVMJOpLFvINbKeFDTs_TaR8Rf7JWdBu9KoINqXN9BstwhfExzaU-t2rUDkBNAbcvRa_wyvgW7zH1ToYVguaCLHvaCnyKOmwRUzKlg9j1lzo240RCUheWoD7SAz3DqRSW/s320/Ativo%2018.png" alt="Logo Ferry" class="logo" />
-    <h1 id="name"></h1>
+    <h1 id="name">DJ Ferry</h1>
     <nav>
       <a href="#bio">Bio</a>
       <a href="#spotify">Spotify</a>
@@ -182,9 +165,12 @@
   <section id="bio">
     <h2>Bio</h2>
     <p>
-      Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ. Sob o nome artístico DJ Frozen, mergulhou no universo do Funk, Pop e Eletro, adquirindo experiência ao lado de grandes nomes da cena como Duda Santos.<br><br>
-      Aos 18 anos, expandiu seu caminho para as produções culturais em Niterói, onde consolidou sua atuação e nunca mais parou. Hoje, Ferry é reconhecido não apenas como um DJ versátil, mas também como um produtor cultural comprometido, transitando com a mesma dedicação entre as pick-ups e a produção de eventos.<br><br>
-      Sua trajetória inclui apresentações em espaços marcantes como Canta Electro na Concha Acústica de Niterói, Closet Pub em Cabo Frio, The Club em Rio das Ostras, Raiz da Lapa no Rio de Janeiro e Festa Stalker (Street Lapa).<br><br>
+      Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ. Sob o nome artístico DJ Frozen, mergulhou no universo do Funk, Pop e Eletro, adquirindo experiência ao lado de grandes nomes da cena como Duda Santos.
+
+      Aos 18 anos, expandiu seu caminho para as produções culturais em Niterói, onde consolidou sua atuação e nunca mais parou. Hoje, Ferry é reconhecido não apenas como um DJ versátil, mas também como um produtor cultural comprometido, transitando com a mesma dedicação entre as pick-ups e a produção de eventos.
+
+      Sua trajetória inclui apresentações em espaços marcantes como Canta Electro na Concha Acústica de Niterói, Closet Pub em Cabo Frio, The Club em Rio das Ostras, Raiz da Lapa no Rio de Janeiro e Festa Stalker (Street Lapa).
+
       Atualmente, Walace dedica-se ao House Tribal, estilo que traduz sua energia e identidade musical. Com batidas intensas e envolventes, transforma cada apresentação em uma experiência única, provando que a música é uma ponte de conexão e liberdade.
     </p>
   </section>
@@ -221,7 +207,7 @@
 
   <section id="presskit">
     <h2>Press Kit</h2>
-    <a href="https://drive.google.com/drive/folders/1L8TJv78hIDmtFaZjBGcOjajIKchWJkN3" target="_blank" class="button">Baixar Press Kit</a>
+    <a href="https://drive.google.com/drive/folders/1L8TJv78hIDmtFaZjBGcOjajIKchWJkN3" target="_blank">Baixar Press Kit</a>
   </section>
 
   <section id="galeria">
@@ -237,7 +223,7 @@
     fotos.forEach(foto => {
       foto.addEventListener('mouseenter', () => {
         foto.style.transform = 'scale(1.05)';
-        foto.style.boxShadow = '0 10px 20px rgba(255,255,255,0.2)';
+        foto.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
       });
       foto.addEventListener('mouseleave', () => {
         foto.style.transform = 'scale(1)';
@@ -248,107 +234,21 @@
 
   <section id="contato">
     <h2>Contato</h2>
-
-    <a href="mailto:djf3rry@gmail.com" class="button">📧 Email</a>
-    <a href="https://wa.me/5521964732403" target="_blank" id="whatsappBtn">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 448 512" style="vertical-align: middle; margin-right:8px; fill:white;">
-    <path d="M380.9 97.1C339-4.4 236-21 165.2 41.7c-43.3 35.2-60.5 87.2-55.6 139.5L55.5 411.6c-5.3 30.3 3.4 61.2 23.9 83 22.6 24.4 55.9 36.2 89.1 33.2 54.4-4.5 105-31.1 142.3-73.2 36.7-41.3 54.2-96.3 48-152.7-1.8-16.1-7.1-31.8-15.2-46.2-2.8-5-6.3-9.7-10.2-13.9l-1.2-1.2c-3.6-3.6-6.5-7.6-8.7-11.9-7.4-14-9.7-30.5-6.6-45.7 3.2-15.4 12.2-29.7 24.9-40.1 17.4-14.5 39.6-19.3 61.2-13.8 21.6 5.6 39.8 21.7 49.7 42.3z"/>
-  </svg>
-  WhatsApp
-</a>
-
-    <a href="https://www.instagram.com/djf3rry" target="_blank" class="button">📸 Instagram</a>
+    <a href="mailto:djf3rry@gmail.com">📧 Email</a>
+    <a href="https://wa.me/5521964732403" target="_blank">📸 Instagram</a>
   </section>
 
   <footer>
     <p>© 2025 Ferry. Todos os direitos reservados.</p>
   </footer>
 
-  <a href="https://wa.me/5521964732403" target="_blank" id="whatsappBtn">💬 WhatsApp</a>
-
-  <div id="emailModal" style="position: fixed; inset: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: flex; justify-content: center; align-items: center; z-index: 9999;">
-    <div style="background: var(--secondary-color); padding: 30px; border-radius: 15px; text-align: center; width: 320px; max-width: 90vw; color: var(--text-color);">
-      <h2 style="margin:0 0 10px; color:var(--text-color);">Bem-vindo!</h2>
-      <p style="margin:0 0 15px; color:var(--text-color); font-size: 16px; font-weight: 500;">Digite seu e-mail para acessar o site:</p>
-
-      <form id="emailForm" method="POST">
-        <input id="gateEmail" type="email" name="email" required placeholder="Seu e-mail" style="padding: 10px; width: 100%; margin-bottom: 10px; border: 1px solid var(--accent-color); border-radius: 6px; color:var(--text-color);" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_subject" value="Novo e-mail cadastrado no site DJ Ferry" />
-        <input id="nextUrl" type="hidden" name="_next" value="https://djf3rry.github.io/ferry-site-oficial" />
-        <button id="submitBtn" type="submit">Enviar</button>
-        <p id="emailError" style="display:none; margin-top:10px; color:#d00; font-size: .9rem;"></p>
-        <p id="emailOk" style="display:none; margin-top:10px; color:#080; font-size: .9rem;">Enviado! Liberando o site…</p>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const modal = document.getElementById('emailModal');
-      const form = document.getElementById('emailForm');
-      const emailInput = document.getElementById('gateEmail');
-      const errorMsg = document.getElementById('emailError');
-      const okMsg = document.getElementById('emailOk');
-      const submitBtn = document.getElementById('submitBtn');
-
-      function showModal() {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-      function hideModal() {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      }
-
-      if (localStorage.getItem('emailCadastrado') === 'true') {
-        hideModal();
-      } else {
-        showModal();
-      }
-
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        errorMsg.style.display = 'none';
-        okMsg.style.display = 'none';
-
-        const email = (emailInput.value || '').trim();
-        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        if (!isValid) {
-          errorMsg.textContent = 'Informe um e-mail válido.';
-          errorMsg.style.display = 'block';
-          return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando…';
-
-        try {
-          const fd = new FormData(form);
-          const resp = await fetch('https://formsubmit.co/ajax/djf3rry@gmail.com', {
-            method: 'POST',
-            body: fd,
-            headers: { 'Accept': 'application/json' }
-          });
-
-          if (resp.ok) {
-            okMsg.style.display = 'block';
-            localStorage.setItem('emailCadastrado', 'true');
-            setTimeout(hideModal, 600);
-          } else {
-            form.action = 'https://formsubmit.co/djf3rry@gmail.com';
-            form.submit();
-          }
-        } catch (err) {
-          form.action = 'https://formsubmit.co/djf3rry@gmail.com';
-          form.submit();
-        } finally {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Enviar';
-        }
-      });
-    })();
-  </script>
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5521964732403" target="_blank" id="whatsappBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 448 512">
+      <path d="M380.9 97.1C339-4.4 236-21 165.2 41.7c-43.3 35.2-60.5 87.2-55.6 139.5L55.5 411.6c-5.3 30.3 3.4 61.2 23.9 83 22.6 24.4 55.9 36.2 89.1 33.2 54.4-4.5 105-31.1 142.3-73.2 36.7-41.3 54.2-96.3 48-152.7-1.8-16.1-7.1-31.8-15.2-46.2-2.8-5-6.3-9.7-10.2-13.9l-1.2-1.2c-3.6-3.6-6.5-7.6-8.7-11.9-7.4-14-9.7-30.5-6.6-45.7 3.2-15.4 12.2-29.7 24.9-40.1 17.4-14.5 39.6-19.3 61.2-13.8 21.6 5.6 39.8 21.7 49.7 42.3z"/>
+    </svg>
+    WhatsApp
+  </a>
 
 </body>
 </html>

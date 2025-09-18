@@ -6,7 +6,11 @@
   <title>DJ FERRY | Rio de Janeiro</title>
   <meta name="description" content="DJ Ferry, artista e produtor cultural do Rio de Janeiro. House Tribal, Funk, Pop e Eletro. Contato e eventos.">
   <meta name="keywords" content="DJ Ferry, DJ Rio de Janeiro, House Tribal, Funk, Pop, Eletro, Eventos musicais">
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
   <style>
+    /* Paleta escura */
     body {
       background-color: #000;
       color: #ccc;
@@ -25,7 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 24px; /* aumentei padding lateral */
+      padding: 10px 20px; /* Aumentei o padding para dar mais espaço */
       z-index: 999;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       gap: 12px;
@@ -48,15 +52,17 @@
       color: #fff;
     }
 
+    /* Menu padrão */
     nav {
       display: flex;
       align-items: center;
-      gap: 24px; /* mais espaçamento entre links */
-      padding-right: 10px; /* afasta da borda */
+      gap: 18px;
+      margin-right: 20px; /* Adicionei espaçamento à direita */
     }
     nav a {
       color: #ccc;
       text-decoration: none;
+      margin: 0;
       transition: color 0.18s;
       font-size: 0.95rem;
     }
@@ -64,6 +70,7 @@
       color: #fff;
     }
 
+    /* Botão hamburger (mobile) */
     .menu-toggle {
       display: none;
       font-size: 1.6rem;
@@ -74,7 +81,7 @@
       width: 48px;
       height: 48px;
       padding: 6px;
-      margin-right: 10px;
+      margin-right: 20px; /* Aumentei a margem para dar mais espaço */
       border-radius: 8px;
       transition: background 0.2s, transform 0.12s;
       align-items: center;
@@ -88,11 +95,12 @@
       transform: scale(0.98);
     }
 
+    /* Menu mobile */
     @media (max-width: 768px) {
       nav {
         position: absolute;
         top: 64px;
-        right: 10px;
+        right: 20px; /* Aumentei o espaçamento à direita */
         background-color: #111;
         flex-direction: column;
         align-items: flex-start;
@@ -154,7 +162,7 @@
       background-color: #111;
       color: #888;
     }
-
+    /* Botão flutuante do WhatsApp (ajustado) */
     #whatsappBtn {
       position: fixed;
       bottom: 25px;
@@ -176,8 +184,9 @@
       transform: scale(1.06);
     }
 
+    /* pequenas correções visuais */
     @media (max-width: 420px) {
-      header { padding-left: 14px; padding-right: 14px; }
+      header { padding-left: 10px; padding-right: 10px; }
       header h1 { font-size: 1rem; }
     }
   </style>
@@ -199,6 +208,7 @@
       <a href="#contato">Contato</a>
     </nav>
 
+    <!-- Botão menu mobile (colocado por último para ficar no canto direito) -->
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
   </header>
 
@@ -209,85 +219,4 @@
 
   <section id="bio">
     <h2>Bio</h2>
-    <p>Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ...</p>
-  </section>
-
-  <section id="spotify" style="text-align: center; padding: 40px 20px;">
-    <h2>Spotify Playlist</h2>
-    <iframe src="https://open.spotify.com/embed/playlist/0cis60UFxY1lZKxXeErCfn?utm_source=generator" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" style="max-width: 660px; border-radius: 12px;" loading="lazy"></iframe>
-  </section>
-
-  <section id="youtube">
-    <h2>Vídeo</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/lKMPOJ2RNfw" frameborder="0" allowfullscreen loading="lazy"></iframe>
-  </section>
-
-  <div style="display: flex; justify-content: center; padding: 20px;">
-    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNjmAj7Put7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="max-width:540px; width:100%; margin:0 auto;"> </blockquote>
-  </div>
-  <script async src="//www.instagram.com/embed.js"></script>
-
-  <section id="presskit">
-    <h2>Press Kit</h2>
-    <a href="https://drive.google.com/drive/folders/1L8TJv78hIDmtFaZjBGcOjajIKchWJkN3" target="_blank">Baixar Press Kit</a>
-  </section>
-
-  <section id="galeria">
-    <div class="gallery">
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjySfLdOfy9_gYTbtbZPk8DrUpjEvhdMMsngqQzp3ME59PrmYL64u0N7IJEo_Qv-PRm_RnWwwha0OZzazaY1nByJbgriwhCnr1IjpSGNrGYeuQyYLXELmTarSGkY5hJojRFdLczaUzsvsoQ0siXJUcJHItdTJrM9r1pTxf1MEYV70yXy0cPWWLzv1Hb9k28/s1280/4983783602949041985.jpg"
-           alt="Foto 1" width="350" height="220" loading="lazy" />
-    </div>
-  </section>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const fotos = document.querySelectorAll('#galeria img');
-      fotos.forEach(foto => {
-        foto.addEventListener('mouseenter', () => {
-          foto.style.transform = 'scale(1.05)';
-          foto.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
-        });
-        foto.addEventListener('mouseleave', () => {
-          foto.style.transform = 'scale(1)';
-          foto.style.boxShadow = 'none';
-        });
-      });
-
-      const menuToggle = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('nav');
-
-      if (menuToggle && nav) {
-        menuToggle.addEventListener('click', () => {
-          const willOpen = !nav.classList.contains('active');
-          nav.classList.toggle('active');
-          menuToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-        });
-        nav.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') {
-            nav.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-    });
-  </script>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <a href="mailto:djf3rry@gmail.com">📧 Email</a>
-    <a href="https://www.instagram.com/djf3rry" target="_blank">📸 Instagram</a>
-  </section>
-
-  <footer>
-    <p>© 2025 Ferry. Todos os direitos reservados.</p>
-  </footer>
-
-  <a href="https://wa.me/5521964732403" target="_blank" id="whatsappBtn">WhatsApp</a>
-</body>
-</html>
+    <p>Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ. Sob o nome artístico DJ Frozen, mergulhou

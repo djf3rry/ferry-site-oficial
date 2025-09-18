@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +40,12 @@
       margin-left: 15px;
       color: #fff;
     }
+
+    /* Menu padrão */
+    nav {
+      display: flex;
+      align-items: center;
+    }
     nav a {
       color: #ccc;
       text-decoration: none;
@@ -49,6 +55,42 @@
     nav a:hover {
       color: #fff;
     }
+
+    /* Botão hamburger (mobile) */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #fff;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Menu mobile */
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #111;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 200px;
+        display: none;
+        padding: 15px;
+        box-shadow: -2px 2px 8px rgba(0,0,0,0.6);
+      }
+      nav a {
+        margin: 10px 0;
+      }
+      nav.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
     section {
       padding: 100px 20px 40px 20px;
       max-width: 1200px;
@@ -116,6 +158,10 @@
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp6TBRurAeBj_ZUiLoY9fKrI75T5epLh-qs1MRNzzHIrFtIA9XXJfzPjLpCWurwVMJOpLFvINbKeFDTs_TaR8Rf7JWdBu9KoINqXN9BstwhfExzaU-t2rUDkBNAbcvRa_wyvgW7zH1ToYVguaCLHvaCnyKOmwRUzKlg9j1lzo240RCUheWoD7SAz3DqRSW/s320/Ativo%2018.png" 
          alt="Logo Ferry" class="logo" width="120" height="60" loading="lazy" />
     <h1 id="name">DJ Ferry</h1>
+
+    <!-- Botão menu mobile -->
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
     <nav>
       <a href="#bio">Bio</a>
       <a href="#spotify">Spotify</a>
@@ -168,6 +214,7 @@
   </section>
 
   <script>
+    // Galeria interativa
     const fotos = document.querySelectorAll('#galeria img');
     fotos.forEach(foto => {
       foto.addEventListener('mouseenter', () => {
@@ -178,6 +225,13 @@
         foto.style.transform = 'scale(1)';
         foto.style.boxShadow = 'none';
       });
+    });
+
+    // Menu mobile toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
     });
   </script>
 

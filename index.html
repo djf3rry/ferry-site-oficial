@@ -6,11 +6,7 @@
   <title>DJ FERRY | Rio de Janeiro</title>
   <meta name="description" content="DJ Ferry, artista e produtor cultural do Rio de Janeiro. House Tribal, Funk, Pop e Eletro. Contato e eventos.">
   <meta name="keywords" content="DJ Ferry, DJ Rio de Janeiro, House Tribal, Funk, Pop, Eletro, Eventos musicais">
-  <link rel="stylesheet" href="style.css" />
-  <script src="config.js" defer></script>
-  <script src="script.js" defer></script>
   <style>
-    /* Paleta escura */
     body {
       background-color: #000;
       color: #ccc;
@@ -29,7 +25,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 14px;
+      padding: 10px 24px; /* aumentei padding lateral */
       z-index: 999;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
       gap: 12px;
@@ -52,16 +48,15 @@
       color: #fff;
     }
 
-    /* Menu padrão */
     nav {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 24px; /* mais espaçamento entre links */
+      padding-right: 10px; /* afasta da borda */
     }
     nav a {
       color: #ccc;
       text-decoration: none;
-      margin: 0;
       transition: color 0.18s;
       font-size: 0.95rem;
     }
@@ -69,7 +64,6 @@
       color: #fff;
     }
 
-    /* Botão hamburger (mobile) */
     .menu-toggle {
       display: none;
       font-size: 1.6rem;
@@ -80,7 +74,7 @@
       width: 48px;
       height: 48px;
       padding: 6px;
-      margin-right: 10px; /* afasta da borda direita */
+      margin-right: 10px;
       border-radius: 8px;
       transition: background 0.2s, transform 0.12s;
       align-items: center;
@@ -94,12 +88,11 @@
       transform: scale(0.98);
     }
 
-    /* Menu mobile */
     @media (max-width: 768px) {
       nav {
         position: absolute;
         top: 64px;
-        right: 10px; /* não colado na borda */
+        right: 10px;
         background-color: #111;
         flex-direction: column;
         align-items: flex-start;
@@ -161,7 +154,7 @@
       background-color: #111;
       color: #888;
     }
-    /* Botão flutuante do WhatsApp (ajustado) */
+
     #whatsappBtn {
       position: fixed;
       bottom: 25px;
@@ -183,9 +176,8 @@
       transform: scale(1.06);
     }
 
-    /* pequenas correções visuais */
     @media (max-width: 420px) {
-      header { padding-left: 10px; padding-right: 10px; }
+      header { padding-left: 14px; padding-right: 14px; }
       header h1 { font-size: 1rem; }
     }
   </style>
@@ -207,7 +199,6 @@
       <a href="#contato">Contato</a>
     </nav>
 
-    <!-- Botão menu mobile (colocado por último para ficar no canto direito) -->
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
   </header>
 
@@ -218,7 +209,7 @@
 
   <section id="bio">
     <h2>Bio</h2>
-    <p>Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ. Sob o nome artístico DJ Frozen, mergulhou no universo do Funk, Pop e Eletro, adquirindo experiência ao lado de grandes nomes da cena como Duda Santos. Aos 18 anos, expandiu seu caminho para as produções culturais em Niterói, onde consolidou sua atuação e nunca mais parou. Hoje, Ferry é reconhecido não apenas como um DJ versátil, mas também como um produtor cultural comprometido, transitando com a mesma dedicação entre as pick-ups e a produção de eventos. Sua trajetória inclui apresentações em espaços marcantes como Canta Electro na Concha Acústica de Niterói, Closet Pub em Cabo Frio, The Club em Rio das Ostras, Raiz da Lapa no Rio de Janeiro e Festa Stalker (Street Lapa). Atualmente, Walace dedica-se ao House Tribal, estilo que traduz sua energia e identidade musical. Com batidas intensas e envolventes, transforma cada apresentação em uma experiência única, provando que a música é uma ponte de conexão e liberdade.</p>
+    <p>Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ...</p>
   </section>
 
   <section id="spotify" style="text-align: center; padding: 40px 20px;">
@@ -228,7 +219,7 @@
 
   <section id="youtube">
     <h2>Vídeo</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/lKMPOJ2RNfw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/lKMPOJ2RNfw" frameborder="0" allowfullscreen loading="lazy"></iframe>
   </section>
 
   <div style="display: flex; justify-content: center; padding: 20px;">
@@ -245,16 +236,11 @@
     <div class="gallery">
       <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjySfLdOfy9_gYTbtbZPk8DrUpjEvhdMMsngqQzp3ME59PrmYL64u0N7IJEo_Qv-PRm_RnWwwha0OZzazaY1nByJbgriwhCnr1IjpSGNrGYeuQyYLXELmTarSGkY5hJojRFdLczaUzsvsoQ0siXJUcJHItdTJrM9r1pTxf1MEYV70yXy0cPWWLzv1Hb9k28/s1280/4983783602949041985.jpg"
            alt="Foto 1" width="350" height="220" loading="lazy" />
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN7tmI95kUV5Kg24BT8LI-cv_2EiaOM3UT9zLZdB1TPOIdjPPMNFAPQilqjqXlQc1bF3V8vGIgUct08BBqxDON37BXBTODgQOegkmgQsPkXKbeoWrfxg2-Wu2zOsIVz9CcBwyr1rRnpDjT98hZppAjllYqKC3WW5Krp_9G14XeWCYsSWY5nX-YsvIuvxAb/s1280/4983783602949041986.jpg"
-           alt="Foto 2" width="350" height="220" loading="lazy" />
-      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO4TsGfmSWm_a-KZVrLebeeTx1Bk0NiwdQv41hWJjG1ewV5JZgPYZzhGAIPi39Bj7yvEPeiKSTpH9n9x46VP0-z0WAyUIhJ6W1DdNiDWWo8WZd1QD7G8Kny0vqs5RRSqaBYcg_4okHRp7ScHxFc5riJQijhV9vnWXSIk7RJVeUrbYeRBkMpj0HMr0T0xpx/s1280/4983783602949041987.jpg"
-           alt="Foto 3" width="350" height="220" loading="lazy" />
     </div>
   </section>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Galeria interativa
       const fotos = document.querySelectorAll('#galeria img');
       fotos.forEach(foto => {
         foto.addEventListener('mouseenter', () => {
@@ -267,7 +253,6 @@
         });
       });
 
-      // Menu mobile toggle (mais robusto)
       const menuToggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('nav');
 
@@ -277,16 +262,12 @@
           nav.classList.toggle('active');
           menuToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
         });
-
-        // Fecha menu ao clicar em qualquer link
         nav.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             nav.classList.remove('active');
             menuToggle.setAttribute('aria-expanded', 'false');
           });
         });
-
-        // Fecha com ESC
         document.addEventListener('keydown', (e) => {
           if (e.key === 'Escape') {
             nav.classList.remove('active');
@@ -307,7 +288,6 @@
     <p>© 2025 Ferry. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Botão flutuante WhatsApp (corrigido) -->
   <a href="https://wa.me/5521964732403" target="_blank" id="whatsappBtn">WhatsApp</a>
 </body>
 </html>

@@ -18,26 +18,37 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       width: 100%;
       background-color: #111;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
+      padding: 10px 14px;
       z-index: 999;
       box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      gap: 12px;
     }
+
+    header .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     header .logo {
       width: 120px;
       height: auto;
       object-fit: contain;
     }
     header h1 {
-      font-size: 1.2rem;
-      margin-left: 15px;
+      font-size: 1.1rem;
+      margin: 0;
       color: #fff;
     }
 
@@ -45,12 +56,14 @@
     nav {
       display: flex;
       align-items: center;
+      gap: 18px;
     }
     nav a {
       color: #ccc;
       text-decoration: none;
-      margin-left: 20px;
-      transition: color 0.3s;
+      margin: 0;
+      transition: color 0.18s;
+      font-size: 0.95rem;
     }
     nav a:hover {
       color: #fff;
@@ -59,42 +72,52 @@
     /* Botão hamburger (mobile) */
     .menu-toggle {
       display: none;
-      font-size: 2rem; /* aumentei */
+      font-size: 1.6rem;
       color: #fff;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 12px; /* mais área de clique */
-      margin-right: 10px; /* afastado da borda */
-      border-radius: 6px;
-      transition: background 0.3s;
+      width: 48px;
+      height: 48px;
+      padding: 6px;
+      margin-right: 10px; /* afasta da borda direita */
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.12s;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
     }
     .menu-toggle:hover {
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06);
+    }
+    .menu-toggle:active {
+      transform: scale(0.98);
     }
 
     /* Menu mobile */
     @media (max-width: 768px) {
       nav {
         position: absolute;
-        top: 60px;
-        right: 0;
+        top: 64px;
+        right: 10px; /* não colado na borda */
         background-color: #111;
         flex-direction: column;
         align-items: flex-start;
         width: 220px;
         display: none;
-        padding: 15px;
-        box-shadow: -2px 2px 8px rgba(0,0,0,0.6);
+        padding: 12px;
+        box-shadow: -2px 2px 12px rgba(0,0,0,0.6);
+        border-radius: 8px;
       }
       nav a {
-        margin: 12px 0;
+        margin: 8px 12px;
+        width: 100%;
       }
       nav.active {
         display: flex;
       }
       .menu-toggle {
-        display: block;
+        display: flex;
       }
     }
 
@@ -119,6 +142,7 @@
       margin: 10px;
       border-radius: 12px;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: block;
     }
     #contato a {
       background-color: #333;
@@ -156,10 +180,134 @@
       justify-content: center;
     }
     #whatsappBtn:hover {
-      transform: scale(1.1);
+      transform: scale(1.06);
+    }
+
+    /* pequenas correções visuais */
+    @media (max-width: 420px) {
+      header { padding-left: 10px; padding-right: 10px; }
+      header h1 { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp6TBRurAeBj_ZUiLoY9fKrI75T5epLh-qs1MRNzzHIrFtIA9XXJfzPjLpCWurwVMJOpLFvINbKeFDTs_TaR8Rf7JWdBu9KoINqXN9Bstwh
+    <div class="brand">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhp6TBRurAeBj_ZUiLoY9fKrI75T5epLh-qs1MRNzzHIrFtIA9XXJfzPjLpCWurwVMJOpLFvINbKeFDTs_TaR8Rf7JWdBu9KoINqXN9BstwhfExzaU-t2rUDkBNAbcvRa_wyvgW7zH1ToYVguaCLHvaCnyKOmwRUzKlg9j1lzo240RCUheWoD7SAz3DqRSW/s320/Ativo%2018.png"
+           alt="Logo Ferry" class="logo" width="120" height="60" loading="lazy" />
+      <h1 id="name">DJ Ferry</h1>
+    </div>
+
+    <nav aria-label="Menu principal">
+      <a href="#bio">Bio</a>
+      <a href="#spotify">Spotify</a>
+      <a href="#youtube">Vídeos</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#presskit">Press Kit</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- Botão menu mobile (colocado por último para ficar no canto direito) -->
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </header>
+
+  <section id="hero">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiYAuCeU2gqezFo28vQn2F1DnBnkbmdefOPjmfGVqpeYF7EDXouIDzKJ0XPpwKmsVphwG-BlM_NFO2L57GOu6_iThjXihyphenhyphenyYCUedkzOooEsmIIpwuscOKyjce9Yuy37gmbuh0syIpIIlKoCV5N48Mc5MB5IoGmu-ZDObEXGtUkZOPYEzzgvt_oqzGRHRZe0/s4219/Design%20sem%20nome.png.png"
+         alt="DJ Ferry em apresentação" width="700" height="400" loading="lazy" />
+  </section>
+
+  <section id="bio">
+    <h2>Bio</h2>
+    <p>Walace Ferreira, também conhecido como DJ Ferry, iniciou sua jornada artística ainda aos 16 anos, como MC em bailes de comunidade no Rio de Janeiro. Pouco tempo depois, descobriu sua verdadeira paixão: ser DJ. Sob o nome artístico DJ Frozen, mergulhou no universo do Funk, Pop e Eletro, adquirindo experiência ao lado de grandes nomes da cena como Duda Santos. Aos 18 anos, expandiu seu caminho para as produções culturais em Niterói, onde consolidou sua atuação e nunca mais parou. Hoje, Ferry é reconhecido não apenas como um DJ versátil, mas também como um produtor cultural comprometido, transitando com a mesma dedicação entre as pick-ups e a produção de eventos. Sua trajetória inclui apresentações em espaços marcantes como Canta Electro na Concha Acústica de Niterói, Closet Pub em Cabo Frio, The Club em Rio das Ostras, Raiz da Lapa no Rio de Janeiro e Festa Stalker (Street Lapa). Atualmente, Walace dedica-se ao House Tribal, estilo que traduz sua energia e identidade musical. Com batidas intensas e envolventes, transforma cada apresentação em uma experiência única, provando que a música é uma ponte de conexão e liberdade.</p>
+  </section>
+
+  <section id="spotify" style="text-align: center; padding: 40px 20px;">
+    <h2>Spotify Playlist</h2>
+    <iframe src="https://open.spotify.com/embed/playlist/0cis60UFxY1lZKxXeErCfn?utm_source=generator" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" style="max-width: 660px; border-radius: 12px;" loading="lazy"></iframe>
+  </section>
+
+  <section id="youtube">
+    <h2>Vídeo</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/lKMPOJ2RNfw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <div style="display: flex; justify-content: center; padding: 20px;">
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DNjmAj7Put7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="max-width:540px; width:100%; margin:0 auto;"> </blockquote>
+  </div>
+  <script async src="//www.instagram.com/embed.js"></script>
+
+  <section id="presskit">
+    <h2>Press Kit</h2>
+    <a href="https://drive.google.com/drive/folders/1L8TJv78hIDmtFaZjBGcOjajIKchWJkN3" target="_blank">Baixar Press Kit</a>
+  </section>
+
+  <section id="galeria">
+    <div class="gallery">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjySfLdOfy9_gYTbtbZPk8DrUpjEvhdMMsngqQzp3ME59PrmYL64u0N7IJEo_Qv-PRm_RnWwwha0OZzazaY1nByJbgriwhCnr1IjpSGNrGYeuQyYLXELmTarSGkY5hJojRFdLczaUzsvsoQ0siXJUcJHItdTJrM9r1pTxf1MEYV70yXy0cPWWLzv1Hb9k28/s1280/4983783602949041985.jpg"
+           alt="Foto 1" width="350" height="220" loading="lazy" />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiN7tmI95kUV5Kg24BT8LI-cv_2EiaOM3UT9zLZdB1TPOIdjPPMNFAPQilqjqXlQc1bF3V8vGIgUct08BBqxDON37BXBTODgQOegkmgQsPkXKbeoWrfxg2-Wu2zOsIVz9CcBwyr1rRnpDjT98hZppAjllYqKC3WW5Krp_9G14XeWCYsSWY5nX-YsvIuvxAb/s1280/4983783602949041986.jpg"
+           alt="Foto 2" width="350" height="220" loading="lazy" />
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjO4TsGfmSWm_a-KZVrLebeeTx1Bk0NiwdQv41hWJjG1ewV5JZgPYZzhGAIPi39Bj7yvEPeiKSTpH9n9x46VP0-z0WAyUIhJ6W1DdNiDWWo8WZd1QD7G8Kny0vqs5RRSqaBYcg_4okHRp7ScHxFc5riJQijhV9vnWXSIk7RJVeUrbYeRBkMpj0HMr0T0xpx/s1280/4983783602949041987.jpg"
+           alt="Foto 3" width="350" height="220" loading="lazy" />
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Galeria interativa
+      const fotos = document.querySelectorAll('#galeria img');
+      fotos.forEach(foto => {
+        foto.addEventListener('mouseenter', () => {
+          foto.style.transform = 'scale(1.05)';
+          foto.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
+        });
+        foto.addEventListener('mouseleave', () => {
+          foto.style.transform = 'scale(1)';
+          foto.style.boxShadow = 'none';
+        });
+      });
+
+      // Menu mobile toggle (mais robusto)
+      const menuToggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('nav');
+
+      if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+          const willOpen = !nav.classList.contains('active');
+          nav.classList.toggle('active');
+          menuToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        });
+
+        // Fecha menu ao clicar em qualquer link
+        nav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+
+        // Fecha com ESC
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            nav.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    });
+  </script>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <a href="mailto:djf3rry@gmail.com">📧 Email</a>
+    <a href="https://www.instagram.com/djf3rry" target="_blank">📸 Instagram</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Ferry. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp (corrigido) -->
+  <a href="https://wa.me/5521964732403" target="_blank" id="whatsappBtn">WhatsApp</a>
+</body>
+</html>

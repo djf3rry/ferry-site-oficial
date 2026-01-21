@@ -72,13 +72,34 @@
     }
 
     .menu-toggle {
-      display: none;
-      font-size: 1.6rem;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-    }
+  display: none; /* desktop */
+  font-size: 1.6rem;
+
+  width: 44px;
+  height: 44px;
+
+  background: rgba(255, 255, 255, 0.12); /* fundo visível */
+  border: none;
+  border-radius: 50%;
+
+  color: #fff;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 12px; /* AFASTA DA BORDA */
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle:active {
+  transform: scale(0.95);
+}
 
   @media (max-width: 768px) {
   nav {
